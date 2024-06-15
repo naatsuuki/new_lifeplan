@@ -36,7 +36,7 @@ SNS（Xやインスタグラム等）を活用して拡散する
 ・GooglesheetsAPI：Google Sheetsにデータを保存し、ユーザーに表示するために使用
 
 ### 画面遷移図
-https://www.figma.com/design/OzpXqKl3JyFiheW3XTJiiI/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E4%BF%AE%E6%AD%A3%EF%BC%91%EF%BC%89?node-id=0-1&t=pHL4Xto7WvFRb29z-0
+https://www.figma.com/design/AuV5S1vlhPkpTLWiayDWFJ/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%E4%BF%AE%E6%AD%A3%EF%BC%92?node-id=0-1&t=OSyS18S28rdAzrsD-0
 
 ### READMEに記載した機能
 - [x] 自身の年齢を西暦で入力できる機能
