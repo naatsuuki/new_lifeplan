@@ -45,3 +45,6 @@ https://www.figma.com/design/AuV5S1vlhPkpTLWiayDWFJ/%E7%94%BB%E9%9D%A2%E9%81%B7%
 - [x] メールアドレス変更機能
 - [x] 目安として選択したら色付けされて表示されるようにしたい
 →幼(3~6歳)小（7~12歳）、中（13~15歳）、高（16~18歳）、大（19~22歳）、老後（65歳〜）
+
+### ER図
+https://www.figma.com/design/AqaYkw8ILpG6gk6l2BxjCb/ER%E5%9B%B3?node-id=0-1&t=mH9udoubnZmobmtT-0
