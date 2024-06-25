@@ -48,4 +48,4 @@ https://www.figma.com/design/AuV5S1vlhPkpTLWiayDWFJ/%E7%94%BB%E9%9D%A2%E9%81%B7%
 →幼(3~6歳)小（7~12歳）、中（13~15歳）、高（16~18歳）、大（19~22歳）、老後（65歳〜）
 
 ### ER図
-https://www.figma.com/design/iMjFEPYghODKwrAwdu9LIS/ER4?t=H9t08G3cPVM9L5Sb-0
+https://www.figma.com/design/Cv3cRYmcQNI8uWmvcCxxN4/ER5?t=F1hxmNMvymfXbihn-0
