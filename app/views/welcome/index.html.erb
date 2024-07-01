@@ -7,8 +7,8 @@
   <style>
     body {
       font-family: 'Helvetica', sans-serif;
-      background-color: #f0f4f7;
-      color: #333;
+      background-color: #f0f4f7; /* メインの背景色 */
+      color: #333; /* メインのテキストカラー */
       margin: 0;
       padding: 0;
     }
@@ -16,12 +16,12 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #fff;
+      background-color: #fff; /* コンテンツの背景色 */
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      color: #007bff;
+      color: #007bff; /* メインの見出しの色 */
     }
     p {
       font-size: 1.2em;
@@ -53,6 +53,18 @@
     button:hover {
       background-color: #0056b3;
     }
+    .button-link {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .button-link:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
@@ -70,6 +82,8 @@
 
       <%= form.submit '保存する' %>
     <% end %>
+
+    <%= link_to 'ユーザー一覧', users_path, class: 'button-link' %>
   </div>
 </body>
 </html>
