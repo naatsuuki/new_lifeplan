@@ -7,8 +7,10 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
+
     if @person.save
-      redirect_to root_path, notice: '他の人の情報を保存しました。'
+      flash[:success] = "他の人の情報を保存しました。"
+      redirect_to root_path
     else
       render :new
     end
