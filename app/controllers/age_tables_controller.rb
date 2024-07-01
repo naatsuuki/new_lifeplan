@@ -3,20 +3,17 @@ class AgeTablesController < ApplicationController
     @age_tables = AgeTable.all
   end
 
-  def show
-    @age_table = AgeTable.find(params[:id])
-  end
-
   def new
     @age_table = AgeTable.new
   end
 
   def create
     @age_table = AgeTable.new(age_table_params)
+    @age_table.user_id = current_user.id
+
     if @age_table.save
-      redirect_to age_tables_path, notice: '年齢表を作成しました。'
+      redirect_to age_tables_path, notice: '年齢表が作成されました。'
     else
-      flash.now[:alert] = '年齢表の作成に失敗しました。'
       render :new
     end
   end
@@ -24,12 +21,12 @@ class AgeTablesController < ApplicationController
   def destroy
     @age_table = AgeTable.find(params[:id])
     @age_table.destroy
-    redirect_to age_tables_path, notice: '年齢表を削除しました。'
+    redirect_to age_tables_path, notice: '年齢表が削除されました。'
   end
 
   private
 
   def age_table_params
-    params.require(:age_table).permit(:user_id, :table_title)
+    params.require(:age_table).permit(:table_title)
   end
 end

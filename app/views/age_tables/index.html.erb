@@ -1,4 +1,3 @@
-<!-- app/views/age_tables/index.html.erb -->
 <div class="container">
   <h1>過去の履歴</h1>
 
@@ -7,8 +6,8 @@
   <ul class="age-table-list">
     <% @age_tables.each do |age_table| %>
       <li>
-        <%= link_to age_table.table_title, age_table_path(age_table) %>
-        <%= button_to '削除', age_table_path(age_table), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+        <%= age_table.table_title %>
+        <%= link_to '削除', age_table_path(age_table), method: :delete, data: { confirm: '本当に削除しますか？' } %>
       </li>
     <% end %>
   </ul>
