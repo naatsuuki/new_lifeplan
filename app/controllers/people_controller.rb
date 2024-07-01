@@ -1,18 +1,16 @@
 # app/controllers/people_controller.rb
-
 class PeopleController < ApplicationController
-  def new
-    @person = Person.new
+  def index
+    @people = Person.all
   end
 
   def create
     @person = Person.new(person_params)
 
     if @person.save
-      flash[:success] = "他の人の情報を保存しました。"
-      redirect_to root_path
+      redirect_to welcome_index_path, notice: '登録しました。'
     else
-      render :new
+      render 'welcome/index'
     end
   end
 

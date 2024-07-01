@@ -1,6 +1,11 @@
 class AddPersonDetailsToPeople < ActiveRecord::Migration[7.1]
   def change
-    add_column :people, :name, :string
-    add_column :people, :birth_year, :integer
+    unless table_exists?(:people)  # テーブルが存在しない場合のみ実行する
+      create_table :people do |t|
+        t.string :name
+        t.integer :birth_year
+        t.timestamps
+      end
+    end
   end
 end
