@@ -1,0 +1,8 @@
+<!-- app/views/people/index.html.erb -->
+<h1>登録一覧</h1>
+
+<ul>
+  <% @people.each do |person| %>
+    <li><%= person.name %> (<%= person.birth_year %>)</li>
+  <% end %>
+</ul>

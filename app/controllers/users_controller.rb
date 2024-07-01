@@ -7,17 +7,19 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   
     if @user.save
-      redirect_to root_path, notice: 'ユーザーを登録しました。'
+      redirect_to users_path, notice: 'ユーザーを登録しました。'
     else
       # エラー処理を記述する
-      render 'welcome/index' # または他の適切な処理
+      @users = User.all
+      flash.now[:alert] = 'ユーザーの登録に失敗しました。'
+      render 'welcome/index' # または適切なエラーページ
     end
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to users_path, notice: 'ユーザーを削除しました。'
   end
 
   private
