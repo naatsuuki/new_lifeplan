@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'people/new'
-  post 'people/create'
+  resources :people, only: [:new, :create]
   resources :users, only: [:new, :create, :index]  # 必要なアクションのみを指定することを推奨します
   get 'welcome/index'
   get '/signup', to: 'users#new'  # 新規登録ページへのルート
