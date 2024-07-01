@@ -1,11 +1,14 @@
-Rails.application.routes.draw do
-  resources :users, only: [:index, :create, :destroy]  # 必要なアクションのみを指定
-  resources :people, only: [:new, :create]             # 必要なアクションのみを指定
+# config/routes.rb
 
-  get 'welcome/index', as: 'welcome'  # 名前付きルートを設定
-  get '/signup', to: 'users#new', as: 'signup'  # 名前付きルートを設定
-  get '/login', to: 'sessions#new', as: 'login'  # 名前付きルートを設定
+Rails.application.routes.draw do
+  resources :users, only: [:index]  # ユーザー情報のルーティング
+  resources :people, only: [:index] # 登録一覧のルーティング
+  resources :agetable, only: [:index] # 過去履歴のルーティング
+
+  get 'welcome/index'
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'  # 名前付きルートを設定
+  delete '/logout', to: 'sessions#destroy'
   root 'welcome#index'
 end
