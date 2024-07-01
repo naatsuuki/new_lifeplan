@@ -11,11 +11,13 @@
       color: #333; /* メインのテキストカラー */
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: flex-end;
     }
     .container {
       display: flex;
       max-width: 800px;
-      margin: 20px auto;
+      margin: 20px;
       padding: 20px;
       background-color: #fff; /* コンテンツの背景色 */
       border-radius: 8px;
@@ -25,7 +27,21 @@
       width: 200px; /* サイドバーの幅 */
       padding: 20px;
       background-color: #e0e0e0; /* サイドバーの背景色 */
-      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      color: #333;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
     }
     .content {
       flex: 1; /* コンテンツ領域を伸縮可能に */
@@ -64,52 +80,10 @@
     button:hover {
       background-color: #0056b3;
     }
-    .button-link {
-      display: block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .button-link:hover {
-      background-color: #218838;
-    }
-    .user-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .user-list li {
-      margin-bottom: 10px;
-    }
-    .user-list li a {
-      color: #333;
-      text-decoration: none;
-    }
-    .user-list li a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
-      <h2>メニュー</h2>
-      <ul>
-        <li><%= link_to 'ユーザー一覧', users_path %></li>
-      </ul>
-      <h2>ユーザー一覧</h2>
-      <ul class="user-list">
-        <% @users.each do |user| %>
-          <li>
-            <span><%= user.name %> (<%= user.birth_year %>)</span>
-            <%= button_to '削除', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
     <div class="content">
       <h1>AgeMap</h1>
       <p>LifePlanを考えるお手伝いをします</p>
@@ -125,7 +99,20 @@
         <%= form.submit '保存する' %>
       <% end %>
 
-      <%= link_to 'ユーザー一覧', users_path, class: 'button-link' %>
+      <ul class="user-list">
+        <% @users.each do |user| %>
+          <li>
+            <span><%= user.name %> (<%= user.birth_year %>)</span>
+            <%= button_to '削除', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h2>メニュー</h2>
+      <ul>
+        <li><%= link_to 'ユーザー一覧', users_path %></li>
+      </ul>
     </div>
   </div>
 </body>
