@@ -6,16 +6,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: 'User was successfully created.'
+      redirect_to users_path
     else
-      redirect_to root_path, alert: 'Failed to create user.'
+      render 'welcome/index'
     end
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path, notice: 'User was successfully deleted.'
+    redirect_to users_path
   end
 
   private
