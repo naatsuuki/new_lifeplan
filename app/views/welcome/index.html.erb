@@ -11,14 +11,24 @@
       color: #333; /* メインのテキストカラー */
       margin: 0;
       padding: 0;
+      display: flex;
     }
     .container {
+      flex: 1;
       max-width: 800px;
-      margin: 20px auto;
+      margin: 20px;
       padding: 20px;
       background-color: #fff; /* コンテンツの背景色 */
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar {
+      width: 300px;
+      background-color: #e9ecef; /* サイドバーの背景色 */
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      border-radius: 8px;
     }
     h1 {
       color: #007bff; /* メインの見出しの色 */
@@ -65,6 +75,31 @@
     .button-link:hover {
       background-color: #218838;
     }
+    .user-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .user-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-list button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .user-list button:hover {
+      background-color: #c82333;
+    }
   </style>
 </head>
 <body>
@@ -82,8 +117,18 @@
 
       <%= form.submit '保存する' %>
     <% end %>
+  </div>
 
-    <%= link_to 'ユーザー一覧', users_path, class: 'button-link' %>
+  <div class="sidebar">
+    <h2>ユーザー一覧</h2>
+    <ul class="user-list">
+      <% @users.each do |user| %>
+        <li>
+          <span><%= user.name %> (<%= user.birth_year %>)</span>
+          <%= button_to '削除', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </body>
 </html>
