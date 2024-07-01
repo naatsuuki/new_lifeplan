@@ -7,8 +7,8 @@
   <style>
     body {
       font-family: 'Helvetica', sans-serif;
-      background-color: #f0f4f7; /* メインの背景色 */
-      color: #333; /* メインのテキストカラー */
+      background-color: #f0f4f7;
+      color: #333;
       margin: 0;
       padding: 0;
     }
@@ -16,12 +16,12 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #fff; /* コンテンツの背景色 */
+      background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      color: #007bff; /* メインの見出しの色 */
+      color: #007bff;
     }
     p {
       font-size: 1.2em;
@@ -61,7 +61,7 @@
     <p>LifePlanを考えるお手伝いをします</p>
     <p>あなたと身近な人の年齢を比べてみましょう</p>
 
-    <%= form_with(model: @person, url: people_path, method: :post) do |form| %>
+    <%= form_with(model: @user, url: users_path, method: :post) do |form| %>
       <%= form.label :name, '名前' %>
       <%= form.text_field :name %>
 
