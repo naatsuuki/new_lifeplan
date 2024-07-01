@@ -5,10 +5,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+  
     if @user.save
-      redirect_to users_path
+      redirect_to root_path, notice: 'ユーザーを登録しました。'
     else
-      render 'welcome/index'
+      # エラー処理を記述する
+      render 'welcome/index' # または他の適切な処理
     end
   end
 
