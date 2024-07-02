@@ -1,7 +1,8 @@
-<div class="container">
-  <h1>過去の履歴</h1>
+<!-- app/views/age_tables/index.html.erb -->
+<% content_for :title, '保存された年齢表 - AgeMap' %>
 
-  <%= link_to '新しい年齢表を作成', new_age_table_path, class: 'btn btn-primary' %>
+<div class="container">
+  <h1>保存された年齢表</h1>
 
   <ul class="age-table-list">
     <% @age_tables.each do |age_table| %>
@@ -11,5 +12,6 @@
       </li>
     <% end %>
   </ul>
-  <a href="<%= root_path %>" class="back-button">戻る</a>
+
+  <button onclick="history.back()" class="back-button">戻る</button>
 </div>
