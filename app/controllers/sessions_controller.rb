@@ -1,6 +1,8 @@
 # app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
   def new
+    # ログインフォームを表示するために空のインスタンスを作成
+    @user = User.new
   end
 
   def create
