@@ -108,11 +108,11 @@
 </head>
 <body>
   <header>
-    <h1>AgeMap</h1>
+   <h1><%= link_to 'AgeMap', root_path %></h1>
     <nav>
       <%= link_to 'ユーザー情報', users_path %>
       <%= link_to '登録一覧', people_path %>
-      <%= link_to '過去の履歴', age_tables_path %>
+      <%= link_to '保存された年齢表', age_tables_path %>
     </nav>
   </header>
 
