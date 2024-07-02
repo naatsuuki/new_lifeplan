@@ -6,3 +6,7 @@ a.no-underline {
 a.no-underline:hover {
     text-decoration: none !important;
 }
+
+.form-group {
+    margin-bottom: 15px; /* 任意の間隔に調整 */
+    }
