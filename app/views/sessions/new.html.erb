@@ -11,13 +11,13 @@
       </div>
 
       <div class="form-group">
-        <%= form.label :password, 'パスワード' %>
-        <%= form.password_field :password, class: 'form-control' %>
+        <%= form.label :birth_year, '生まれ年（西暦）' %>
+        <%= form.number_field :birth_year, min: 1900, max: Date.today.year, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :birth_year, '生まれ年（西暦）' %>
-        <%= form.number_field :birth_year, min: 1900, max: Date.today.year, class: 'form-control' %>
+        <%= form.label :password, 'パスワード' %>
+        <%= form.password_field :password, class: 'form-control' %>
       </div>
 
       <%= form.submit 'ログインする', class: 'btn btn-primary' %>
