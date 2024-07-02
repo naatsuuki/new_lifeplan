@@ -7,7 +7,6 @@
     <% @users.each do |user| %>
       <li>
         <span><%= user.name %> (<%= user.birth_year %>)</span>
-        <%= button_to '削除', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-button' %>
       </li>
     <% end %>
   </ul>
